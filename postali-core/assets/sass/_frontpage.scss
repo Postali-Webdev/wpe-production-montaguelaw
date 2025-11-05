@@ -1,0 +1,305 @@
+/**
+ * Template Front Page Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+.home {
+    #hp-banner {
+        padding-top: 180px;
+
+        @include respond(tab-port) {
+            padding:100px 0 0;
+
+        }
+
+        h1 {
+            font-size: 4vw;
+            line-height: 145%;
+            margin-bottom: 40px;
+
+            .blue {
+                color:#00b8f5;
+            }
+
+            .large  {
+                font-size: 7vw;
+                letter-spacing: 6px;
+                font-weight: 400;
+                display: block;
+            }
+
+            @media screen and (min-width:1600px) {
+                font-size: 70px;
+                line-height: 125%;
+
+                .large {
+                    font-size: 110px;
+                }
+            }
+
+            @include respond(tab-land) {
+                font-size: 7vw !important;
+                line-height: 120%;
+
+                .large {
+                    font-size: inherit;
+                    letter-spacing: inherit;
+                    font-weight: 400;
+                    display: block;
+                }
+            }
+
+            @include respond(phone) {          
+                margin-bottom: 0;
+                      
+                .large {
+                    display: inline;
+                }
+            }
+        }
+
+        .subhead {
+            font-family: $sans !important;
+            font-size: 28px;
+            line-height: 120%;
+            font-weight: 400;
+
+            @include respond(phone) {
+                font-size: 22px;
+            }
+        }
+
+        .buttons {
+            justify-content: space-between;
+            align-items: normal;
+            display: flex;
+
+            @include respond(tab-port) {
+                margin-top: 50px;
+            }
+
+            .btn {
+                width: 48.45%;
+                background:$blk;
+                font-family: $sans;
+                font-size: 15px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height:90px;
+                position: relative;
+                transition: $trans;
+                padding:0;
+
+                @include respond(phone) {
+                    width: 100%;
+                    margin:10px 0;
+                }
+
+                @include corners;
+
+                &:hover {
+                    background-color: $blue;
+
+                    &::before {
+                        top:-6px;
+                        left:-6px;
+                        background: $blk;
+                    }
+
+                    &::after {
+                        bottom:-6px;
+                        right:-6px;
+                        background: $blk;
+                    }
+                }
+            }
+        }
+    }    
+
+    #section_1 {
+        @include respond(tab-port) {
+            padding-bottom: 0;
+        }
+        
+        .container {
+            .columns {
+                .column-50 {
+                    h2 {
+                        margin-top: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    #section_2 {
+        @include respond(tab-port) {
+            padding: 0;
+        }
+
+        .container {
+            .columns {
+                align-items: center;
+
+                .steps {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    text-align: center;
+                    background: #efefef;
+                    padding: 70px 50px;
+
+                    @include respond(tab-port) {
+                        margin-top: 30px;
+                    }
+
+                    @include corners;
+
+                    .step {
+                        width: 100%;
+                        
+                        &:not(:last-child) {
+                            margin-bottom: 50px;
+                            position: relative;
+
+                            &::after {
+                                position: absolute;
+                                height: 30px;
+                                width: 1px;
+                                background: $blue;
+                                content: "";
+                                bottom: -37px;
+                            }
+                        }
+
+                        p {
+                            margin-bottom: 0;
+                        }
+
+                        .step-number {
+                            font-family: $serif;
+                            text-transform: uppercase;
+                            letter-spacing: 4px;
+                            font-size: 14px;
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #section_3 {
+        .container {
+            .columns {
+                .column-50 {
+                    .pre-headline {
+                        color: $blue;
+                        font-family: $serif;
+                        font-size: 18px;
+                        margin: 0;
+                    }
+                }
+
+                .column-full {
+                    max-width: 80%;
+                    display: flex;
+                    align-items: normal;
+                    justify-content: space-between;
+
+                    @include respond(tab-port) {
+                        max-width: 100%;
+                        justify-content: center;
+                    }
+
+                    .pa-box {
+                        text-align: left;
+                        width: 32.3%;
+                        padding: 25px;
+                        box-sizing: border-box;
+                        background: $blk;
+                        height: 200px;
+                        font-size: 18px;
+                        color:$white;
+                        font-family: $serif;
+                        line-height: 120%;
+                        position: relative;
+                        margin: .5%;
+
+                        @include respond(phone) {
+                            width:99%;
+                            margin:.5%;
+                        }
+
+                        &:hover {
+                            background: rgba(0, 0, 0, .5) !important;
+                            text-decoration: underline;
+                        }
+
+                        .background {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            z-index: -1;
+                            background-size: cover !important;
+                            background-position: center right !important;
+                        }
+                    }
+
+                    .btn {
+                        margin:0 auto;
+                    }
+                }
+            }
+        }
+    }
+
+    #section_4 {
+        background:$blk;
+        padding:100px 0;
+
+        h2, h3, h4, p, ul li {
+            color:$white;
+        }
+
+        .pre-headline {
+            color: $white;
+            font-family: $serif;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        h2 {
+            color:$blue;
+            margin: 0 !important;
+        }
+
+        .column-50 {
+            &.block {
+                p {
+                    &:last-child {
+                        margin-bottom: 0 !important;
+                    }
+                }
+
+                a.btn {
+                    &:hover {
+                        color:$blue !important;
+                        background-color: $white;
+                    }
+                }
+
+                @include respond(tab-port) {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
